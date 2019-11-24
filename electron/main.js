@@ -1,4 +1,5 @@
 // Modules to control application life and create native browser window
+const fs = require("fs")
 const {app, ipcMain, Menu, BrowserWindow, Tray} = require('electron')
 const path = require('path')
 const { spawn, execFile } = require('child_process')
@@ -27,7 +28,7 @@ function createWindow () {
   })
 
   // and load the index.html of the app.
-  // mainWindow.loadFile('index.html')
+  // mainWindow.loadURL('http://127.0.0.1:8000/')
   mainWindow.loadURL('https://puge-10017157.cos.ap-shanghai.myqcloud.com/lamp/index.html')
 
   // Open the DevTools.
@@ -42,7 +43,7 @@ function createWindow () {
   })
 
   // 系统托盘
-  tray = new Tray('./resources/image/48.ico');
+  tray = new Tray('./resources/image/48.png');
   const contextMenu = Menu.buildFromTemplate([
     {
       label: '退出',
@@ -87,7 +88,7 @@ app.on('activate', function () {
 
 let child = null
 ipcMain.on('synchronous-message', (event, arg) => {
-  console.log(arg) // prints "ping"
+  // console.log(arg) // prints "ping"
   
   if (arg.type === 'run') {
     if (child !== null) {
@@ -95,13 +96,19 @@ ipcMain.on('synchronous-message', (event, arg) => {
       child = null
     }
     // console.log(process.cwd())
-    child = execFile(process.cwd() + '\\resources\\frpc.exe', [arg.clintType, '-s', 'lamp.run:7000', '-l', arg.localPort, '-i', '0.0.0.0', '-r', arg.remotePort], (error, stdout, stderr) => {
-      if (error) {
-        console.error(error)
-      }
-      console.log(stdout);
-    })
-    event.returnValue = {err: 0}
+    const frpPath = process.cwd() + '\\resources\\frpc.exe'
+    if (fs.existsSync(frpPath)) {
+      child = execFile(filePath, [arg.clintType, '-s', 'lamp.run:7000', '-l', arg.localPort, '-i', '0.0.0.0', '-r', arg.remotePort], (error, stdout, stderr) => {
+        if (error) {
+          console.log(error)
+          event.returnValue = {err: 1, message: error}
+          return
+        }
+      })
+      event.returnValue = {err: 0}
+    } else {
+      event.returnValue = {err: 1, message: "关键文件不存在!"}
+    }
   } else if (arg.type === 'stop') {
     if (child !== null) {
       child.kill()

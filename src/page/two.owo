@@ -54,16 +54,20 @@
           alert('本地端口和远程端口不能为空!')
         }
         console.log(owo.query('.clint-type')[0].value)
-        this.data.ipcRenderer.sendSync('synchronous-message', {
+        const res = this.data.ipcRenderer.sendSync('synchronous-message', {
           type: 'run',
           localPort,
           remotePort,
           clintType: owo.query('.clint-type')[0].value
         })
-        owo.query('.infoBar')[0].innerText = `地址: lamp.run:${remotePort}`
-        owo.query('.infoBar')[0].style.display = 'block'
-        owo.query('.run')[0].classList.add('is-run')
-        owo.query('.run')[0].innerText = '停止运行'
+        if (res.err === 0) {
+          owo.query('.infoBar')[0].innerText = `地址: lamp.run:${remotePort}`
+          owo.query('.infoBar')[0].style.display = 'block'
+          owo.query('.run')[0].classList.add('is-run')
+          owo.query('.run')[0].innerText = '停止运行'
+        } else {
+          alert(res.message)
+        }
       }
       
       this.data.isRun = !this.data.isRun

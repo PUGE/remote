@@ -6,17 +6,17 @@
   "scripts": {
     "pack": "electron-builder --dir",
     "dist": "electron-builder",
-    "start": "electron ."
+    "start": "electron ./"
   },
   "build": {
     "extraResources": [
       {
-        "from": "./resources/image/48.ico",
-        "to": "./image/48.ico"
-      },
-      {
         "from": "./resources/image/48.png",
         "to": "./image/48.png"
+      },
+      {
+        "from": "./resources/image/256.png",
+        "to": "./image/256.png"
       },
       {
         "from": "./resources/frpc.exe",
@@ -24,7 +24,7 @@
       }
     ],
     "win": {
-      "icon": "./resources/image/256.png"
+      "icon": "./resources/image/512.png"
     }
   },
   "repository": "https://github.com/electron/electron-quick-start",
