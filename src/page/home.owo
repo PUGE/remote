@@ -1,0 +1,21 @@
+<template lang="pug">
+.home
+  .button(:tap="owo.go('two')") 登录
+</template>
+
+<script>
+  module.exports = {
+    created: function () {
+      console.log('my name is pack!')
+    }
+  }
+</script>
+
+
+<style lang="less">
+.home {
+  width: 100%;
+  height: 100%;
+  background-color: #3c3c3c;
+}
+</style>

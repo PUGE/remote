@@ -1,0 +1,199 @@
+[2019-11-10T19:10:10.800] [INFO] default - --------------------------- 开始编译 ---------------------------
+[2019-11-10T19:10:10.802] [INFO] default - 程序运行目录: C:\Users\my\Documents\GitHub\remote
+[2019-11-10T19:10:10.802] [INFO] default - 首次启动!
+[2019-11-10T19:10:10.802] [INFO] default - 生成版本号: o69m2xvl9ul
+[2019-11-10T19:10:10.803] [INFO] default - 清理资源文件夹: C:\Users\my\Documents\GitHub\remote\dist\static
+[2019-11-10T19:10:10.803] [INFO] default - 文件夹不存在: C:\Users\my\Documents\GitHub\remote\dist\static
+[2019-11-10T19:10:10.803] [INFO] default - 创建文件夹: C:\Users\my\Documents\GitHub\remote\dist\static
+[2019-11-10T19:10:10.803] [INFO] default - 读取模板文件: C:\Users\my\Documents\GitHub\pack\lib\index.html
+[2019-11-10T19:10:10.804] [DEBUG] default - 读取网页标题: lamp
+[2019-11-10T19:10:10.804] [DEBUG] default - 处理页面源信息: [{"http-equiv":"content-type","content":"text/html; charset=UTF-8"},{"name":"viewport","content":"initial-scale=1,user-scalable=no,maximum-scale=1"}]
+[2019-11-10T19:10:10.805] [INFO] default - 开始处理模块: two
+[2019-11-10T19:10:11.250] [DEBUG] default - 缓存模板: two./src/page/two.owo
+[2019-11-10T19:10:11.298] [DEBUG] default - 页面two处理用时: 493 毫秒!
+[2019-11-10T19:10:11.300] [INFO] default - 文件夹不存在: C:/Users/my/Documents/GitHub/remote/dist/static/resource
+[2019-11-10T19:10:11.300] [INFO] default - 创建文件夹: C:/Users/my/Documents/GitHub/remote/dist/static/resource
+[2019-11-10T19:10:11.300] [DEBUG] default - css中的资源处理完毕!
+[2019-11-10T19:10:11.786] [DEBUG] default - 使用postcss处理样式，使用了1个插件!
+[2019-11-10T19:10:11.831] [INFO] default - 文件夹不存在: C:\Users\my\Documents\GitHub\remote\dist\static\css
+[2019-11-10T19:10:11.831] [INFO] default - 创建文件夹: C:\Users\my\Documents\GitHub\remote\dist\static\css
+[2019-11-10T19:10:11.831] [INFO] default - 读取文件: C:\Users\my\Documents\GitHub\remote\src\main.css
+[2019-11-10T19:10:11.831] [INFO] default - 附属css中的资源不需要处理!
+[2019-11-10T19:10:11.832] [INFO] default - 处理字体: {}
+[2019-11-10T19:10:11.977] [INFO] default - 使用postcss处理完毕! 用时: 191 毫秒
+[2019-11-10T19:10:11.978] [INFO] default - 正在处理script!
+[2019-11-10T19:10:11.979] [DEBUG] default - 选择将js合并到html中!
+[2019-11-10T19:10:12.522] [INFO] default - 工程中只有一个页面!
+[2019-11-10T19:10:12.523] [INFO] default - js中的资源处理完毕!
+[2019-11-10T19:10:12.524] [DEBUG] default - 处理引用脚本: [{"name":"main","src":"./src/main.js"}]
+[2019-11-10T19:10:12.524] [DEBUG] default - 外部脚本数量: 1
+[2019-11-10T19:10:12.524] [DEBUG] default - 处理脚本: main
+[2019-11-10T19:10:12.524] [INFO] default - 读取文件: C:\Users\my\Documents\GitHub\remote\src\main.js
+[2019-11-10T19:10:12.524] [DEBUG] default - 输出scriptData
+[2019-11-10T19:10:12.524] [DEBUG] default - 准备输出html!
+[2019-11-10T19:10:12.526] [INFO] default - 文件夹不存在: C:\Users\my\Documents\GitHub\remote\dist\static\js
+[2019-11-10T19:10:12.526] [INFO] default - 创建文件夹: C:\Users\my\Documents\GitHub\remote\dist\static\js
+[2019-11-10T19:10:12.527] [DEBUG] default - 页面中不包含切换动画!
+[2019-11-10T19:10:12.528] [INFO] default - 编译结束!
+[2019-11-10T19:10:12.528] [INFO] default - 发送页面需要刷新命令!
+[2019-11-10T19:10:12.540] [INFO] default - 写入文件: C:\Users\my\Documents\GitHub\remote\dist\static\css\owo.main.o69m2xvl9ul.css
+[2019-11-10T19:10:12.540] [INFO] default - 主要逻辑文件写出成功!
+[2019-11-10T19:10:12.541] [INFO] default - 读取成功: C:\Users\my\Documents\GitHub\remote\src\main.css
+[2019-11-10T19:10:12.541] [INFO] default - 读取成功: C:\Users\my\Documents\GitHub\remote\src\main.js
+[2019-11-10T19:10:12.552] [INFO] default - 写入文件: C:\Users\my\Documents\GitHub\remote\dist\static\js\main.js
+[2019-11-10T19:10:12.552] [INFO] default - 写入文件: C:\Users\my\Documents\GitHub\remote\dist\static\css\main.css
+[2019-11-10T19:10:50.370] [INFO] default - file change: C:\Users\my\Documents\GitHub\remote\src\page\two.owo
+[2019-11-10T19:10:50.370] [INFO] default - --------------------------- 开始编译 ---------------------------
+[2019-11-10T19:10:50.370] [INFO] default - 程序运行目录: C:\Users\my\Documents\GitHub\remote
+[2019-11-10T19:10:50.371] [INFO] default - 刷新模式,变化目录: C:\Users\my\Documents\GitHub\remote\src\page\two.owo
+[2019-11-10T19:10:50.371] [INFO] default - 读取模板文件: C:\Users\my\Documents\GitHub\pack\lib\index.html
+[2019-11-10T19:10:50.371] [DEBUG] default - 读取网页标题: lamp
+[2019-11-10T19:10:50.371] [DEBUG] default - 处理页面源信息: [{"http-equiv":"content-type","content":"text/html; charset=UTF-8"},{"name":"viewport","content":"initial-scale=1,user-scalable=no,maximum-scale=1"}]
+[2019-11-10T19:10:50.371] [INFO] default - 开始处理模块: two
+[2019-11-10T19:10:50.402] [DEBUG] default - 缓存模板: two./src/page/two.owo
+[2019-11-10T19:10:50.409] [DEBUG] default - 页面two处理用时: 38 毫秒!
+[2019-11-10T19:10:50.410] [DEBUG] default - css中的资源处理完毕!
+[2019-11-10T19:10:50.410] [DEBUG] default - 使用postcss处理样式，使用了1个插件!
+[2019-11-10T19:10:50.414] [INFO] default - 处理字体: {}
+[2019-11-10T19:10:50.415] [INFO] default - 使用postcss处理完毕! 用时: 5 毫秒
+[2019-11-10T19:10:50.415] [INFO] default - 正在处理script!
+[2019-11-10T19:10:50.416] [DEBUG] default - 选择将js合并到html中!
+[2019-11-10T19:10:50.456] [INFO] default - 工程中只有一个页面!
+[2019-11-10T19:10:50.457] [INFO] default - js中的资源处理完毕!
+[2019-11-10T19:10:50.457] [DEBUG] default - 处理引用脚本: [{"name":"main","src":"./src/main.js"}]
+[2019-11-10T19:10:50.457] [DEBUG] default - 外部脚本数量: 1
+[2019-11-10T19:10:50.457] [DEBUG] default - 处理脚本: main
+[2019-11-10T19:10:50.457] [INFO] default - 读取文件: C:\Users\my\Documents\GitHub\remote\src\main.js
+[2019-11-10T19:10:50.457] [DEBUG] default - 输出scriptData
+[2019-11-10T19:10:50.457] [DEBUG] default - 准备输出html!
+[2019-11-10T19:10:50.459] [DEBUG] default - 页面中不包含切换动画!
+[2019-11-10T19:10:50.459] [INFO] default - 编译结束!
+[2019-11-10T19:10:50.460] [INFO] default - 发送页面需要刷新命令!
+[2019-11-10T19:10:50.460] [INFO] default - 读取成功: C:\Users\my\Documents\GitHub\remote\src\main.js
+[2019-11-10T19:10:50.460] [INFO] default - 写入文件: C:\Users\my\Documents\GitHub\remote\dist\static\css\owo.main.o69m2xvl9ul.css
+[2019-11-10T19:10:50.460] [INFO] default - 主要逻辑文件写出成功!
+[2019-11-10T19:10:50.460] [INFO] default - 写入文件: C:\Users\my\Documents\GitHub\remote\dist\static\js\main.js
+[2019-11-10T19:12:52.376] [INFO] default - file change: C:\Users\my\Documents\GitHub\remote\src\page\two.owo
+[2019-11-10T19:12:52.376] [INFO] default - --------------------------- 开始编译 ---------------------------
+[2019-11-10T19:12:52.376] [INFO] default - 程序运行目录: C:\Users\my\Documents\GitHub\remote
+[2019-11-10T19:12:52.376] [INFO] default - 刷新模式,变化目录: C:\Users\my\Documents\GitHub\remote\src\page\two.owo
+[2019-11-10T19:12:52.376] [INFO] default - 读取模板文件: C:\Users\my\Documents\GitHub\pack\lib\index.html
+[2019-11-10T19:12:52.377] [DEBUG] default - 读取网页标题: lamp
+[2019-11-10T19:12:52.377] [DEBUG] default - 处理页面源信息: [{"http-equiv":"content-type","content":"text/html; charset=UTF-8"},{"name":"viewport","content":"initial-scale=1,user-scalable=no,maximum-scale=1"}]
+[2019-11-10T19:12:52.377] [INFO] default - 开始处理模块: two
+[2019-11-10T19:12:52.403] [DEBUG] default - 缓存模板: two./src/page/two.owo
+[2019-11-10T19:12:52.409] [DEBUG] default - 页面two处理用时: 32 毫秒!
+[2019-11-10T19:12:52.409] [DEBUG] default - css中的资源处理完毕!
+[2019-11-10T19:12:52.409] [DEBUG] default - 使用postcss处理样式，使用了1个插件!
+[2019-11-10T19:12:52.413] [INFO] default - 处理字体: {}
+[2019-11-10T19:12:52.414] [INFO] default - 使用postcss处理完毕! 用时: 4 毫秒
+[2019-11-10T19:12:52.414] [INFO] default - 正在处理script!
+[2019-11-10T19:12:52.415] [DEBUG] default - 选择将js合并到html中!
+[2019-11-10T19:12:52.460] [INFO] default - 工程中只有一个页面!
+[2019-11-10T19:12:52.461] [INFO] default - js中的资源处理完毕!
+[2019-11-10T19:12:52.462] [DEBUG] default - 处理引用脚本: [{"name":"main","src":"./src/main.js"}]
+[2019-11-10T19:12:52.462] [DEBUG] default - 外部脚本数量: 1
+[2019-11-10T19:12:52.462] [DEBUG] default - 处理脚本: main
+[2019-11-10T19:12:52.462] [INFO] default - 读取文件: C:\Users\my\Documents\GitHub\remote\src\main.js
+[2019-11-10T19:12:52.462] [DEBUG] default - 输出scriptData
+[2019-11-10T19:12:52.462] [DEBUG] default - 准备输出html!
+[2019-11-10T19:12:52.464] [DEBUG] default - 页面中不包含切换动画!
+[2019-11-10T19:12:52.465] [INFO] default - 编译结束!
+[2019-11-10T19:12:52.465] [INFO] default - 发送页面需要刷新命令!
+[2019-11-10T19:12:52.466] [INFO] default - 读取成功: C:\Users\my\Documents\GitHub\remote\src\main.js
+[2019-11-10T19:12:52.466] [INFO] default - 写入文件: C:\Users\my\Documents\GitHub\remote\dist\static\css\owo.main.o69m2xvl9ul.css
+[2019-11-10T19:12:52.466] [INFO] default - 主要逻辑文件写出成功!
+[2019-11-10T19:12:52.467] [INFO] default - 写入文件: C:\Users\my\Documents\GitHub\remote\dist\static\js\main.js
+[2019-11-10T19:13:43.324] [INFO] default - file change: C:\Users\my\Documents\GitHub\remote\src\page\two.owo
+[2019-11-10T19:13:43.324] [INFO] default - --------------------------- 开始编译 ---------------------------
+[2019-11-10T19:13:43.324] [INFO] default - 程序运行目录: C:\Users\my\Documents\GitHub\remote
+[2019-11-10T19:13:43.324] [INFO] default - 刷新模式,变化目录: C:\Users\my\Documents\GitHub\remote\src\page\two.owo
+[2019-11-10T19:13:43.324] [INFO] default - 读取模板文件: C:\Users\my\Documents\GitHub\pack\lib\index.html
+[2019-11-10T19:13:43.325] [DEBUG] default - 读取网页标题: lamp
+[2019-11-10T19:13:43.325] [DEBUG] default - 处理页面源信息: [{"http-equiv":"content-type","content":"text/html; charset=UTF-8"},{"name":"viewport","content":"initial-scale=1,user-scalable=no,maximum-scale=1"}]
+[2019-11-10T19:13:43.325] [INFO] default - 开始处理模块: two
+[2019-11-10T19:13:43.350] [DEBUG] default - 缓存模板: two./src/page/two.owo
+[2019-11-10T19:13:43.355] [DEBUG] default - 页面two处理用时: 30 毫秒!
+[2019-11-10T19:13:43.356] [DEBUG] default - css中的资源处理完毕!
+[2019-11-10T19:13:43.356] [DEBUG] default - 使用postcss处理样式，使用了1个插件!
+[2019-11-10T19:13:43.358] [INFO] default - 处理字体: {}
+[2019-11-10T19:13:43.359] [INFO] default - 使用postcss处理完毕! 用时: 3 毫秒
+[2019-11-10T19:13:43.359] [INFO] default - 正在处理script!
+[2019-11-10T19:13:43.360] [DEBUG] default - 选择将js合并到html中!
+[2019-11-10T19:13:43.384] [INFO] default - 工程中只有一个页面!
+[2019-11-10T19:13:43.385] [INFO] default - js中的资源处理完毕!
+[2019-11-10T19:13:43.385] [DEBUG] default - 处理引用脚本: [{"name":"main","src":"./src/main.js"}]
+[2019-11-10T19:13:43.385] [DEBUG] default - 外部脚本数量: 1
+[2019-11-10T19:13:43.386] [DEBUG] default - 处理脚本: main
+[2019-11-10T19:13:43.386] [INFO] default - 读取文件: C:\Users\my\Documents\GitHub\remote\src\main.js
+[2019-11-10T19:13:43.386] [DEBUG] default - 输出scriptData
+[2019-11-10T19:13:43.386] [DEBUG] default - 准备输出html!
+[2019-11-10T19:13:43.387] [DEBUG] default - 页面中不包含切换动画!
+[2019-11-10T19:13:43.388] [INFO] default - 编译结束!
+[2019-11-10T19:13:43.388] [INFO] default - 发送页面需要刷新命令!
+[2019-11-10T19:13:43.388] [INFO] default - 读取成功: C:\Users\my\Documents\GitHub\remote\src\main.js
+[2019-11-10T19:13:43.389] [INFO] default - 写入文件: C:\Users\my\Documents\GitHub\remote\dist\static\css\owo.main.o69m2xvl9ul.css
+[2019-11-10T19:13:43.389] [INFO] default - 主要逻辑文件写出成功!
+[2019-11-10T19:13:43.389] [INFO] default - 写入文件: C:\Users\my\Documents\GitHub\remote\dist\static\js\main.js
+[2019-11-10T19:14:25.037] [INFO] default - file change: C:\Users\my\Documents\GitHub\remote\src\page\two.owo
+[2019-11-10T19:14:25.037] [INFO] default - --------------------------- 开始编译 ---------------------------
+[2019-11-10T19:14:25.037] [INFO] default - 程序运行目录: C:\Users\my\Documents\GitHub\remote
+[2019-11-10T19:14:25.037] [INFO] default - 刷新模式,变化目录: C:\Users\my\Documents\GitHub\remote\src\page\two.owo
+[2019-11-10T19:14:25.037] [INFO] default - 读取模板文件: C:\Users\my\Documents\GitHub\pack\lib\index.html
+[2019-11-10T19:14:25.038] [DEBUG] default - 读取网页标题: lamp
+[2019-11-10T19:14:25.038] [DEBUG] default - 处理页面源信息: [{"http-equiv":"content-type","content":"text/html; charset=UTF-8"},{"name":"viewport","content":"initial-scale=1,user-scalable=no,maximum-scale=1"}]
+[2019-11-10T19:14:25.038] [INFO] default - 开始处理模块: two
+[2019-11-10T19:14:25.062] [DEBUG] default - 缓存模板: two./src/page/two.owo
+[2019-11-10T19:14:25.068] [DEBUG] default - 页面two处理用时: 30 毫秒!
+[2019-11-10T19:14:25.068] [DEBUG] default - css中的资源处理完毕!
+[2019-11-10T19:14:25.068] [DEBUG] default - 使用postcss处理样式，使用了1个插件!
+[2019-11-10T19:14:25.074] [INFO] default - 处理字体: {}
+[2019-11-10T19:14:25.074] [INFO] default - 使用postcss处理完毕! 用时: 6 毫秒
+[2019-11-10T19:14:25.074] [INFO] default - 正在处理script!
+[2019-11-10T19:14:25.075] [DEBUG] default - 选择将js合并到html中!
+[2019-11-10T19:14:25.098] [INFO] default - 工程中只有一个页面!
+[2019-11-10T19:14:25.099] [INFO] default - js中的资源处理完毕!
+[2019-11-10T19:14:25.099] [DEBUG] default - 处理引用脚本: [{"name":"main","src":"./src/main.js"}]
+[2019-11-10T19:14:25.100] [DEBUG] default - 外部脚本数量: 1
+[2019-11-10T19:14:25.100] [DEBUG] default - 处理脚本: main
+[2019-11-10T19:14:25.100] [INFO] default - 读取文件: C:\Users\my\Documents\GitHub\remote\src\main.js
+[2019-11-10T19:14:25.100] [DEBUG] default - 输出scriptData
+[2019-11-10T19:14:25.100] [DEBUG] default - 准备输出html!
+[2019-11-10T19:14:25.101] [DEBUG] default - 页面中不包含切换动画!
+[2019-11-10T19:14:25.101] [INFO] default - 编译结束!
+[2019-11-10T19:14:25.102] [INFO] default - 发送页面需要刷新命令!
+[2019-11-10T19:14:25.102] [INFO] default - 读取成功: C:\Users\my\Documents\GitHub\remote\src\main.js
+[2019-11-10T19:14:25.102] [INFO] default - 写入文件: C:\Users\my\Documents\GitHub\remote\dist\static\css\owo.main.o69m2xvl9ul.css
+[2019-11-10T19:14:25.102] [INFO] default - 主要逻辑文件写出成功!
+[2019-11-10T19:14:25.102] [INFO] default - 写入文件: C:\Users\my\Documents\GitHub\remote\dist\static\js\main.js
+[2019-11-10T19:17:12.029] [INFO] default - file change: C:\Users\my\Documents\GitHub\remote\src\page\two.owo
+[2019-11-10T19:17:12.029] [INFO] default - --------------------------- 开始编译 ---------------------------
+[2019-11-10T19:17:12.029] [INFO] default - 程序运行目录: C:\Users\my\Documents\GitHub\remote
+[2019-11-10T19:17:12.029] [INFO] default - 刷新模式,变化目录: C:\Users\my\Documents\GitHub\remote\src\page\two.owo
+[2019-11-10T19:17:12.029] [INFO] default - 读取模板文件: C:\Users\my\Documents\GitHub\pack\lib\index.html
+[2019-11-10T19:17:12.030] [DEBUG] default - 读取网页标题: lamp
+[2019-11-10T19:17:12.030] [DEBUG] default - 处理页面源信息: [{"http-equiv":"content-type","content":"text/html; charset=UTF-8"},{"name":"viewport","content":"initial-scale=1,user-scalable=no,maximum-scale=1"}]
+[2019-11-10T19:17:12.030] [INFO] default - 开始处理模块: two
+[2019-11-10T19:17:12.055] [DEBUG] default - 缓存模板: two./src/page/two.owo
+[2019-11-10T19:17:12.060] [DEBUG] default - 页面two处理用时: 30 毫秒!
+[2019-11-10T19:17:12.060] [DEBUG] default - css中的资源处理完毕!
+[2019-11-10T19:17:12.060] [DEBUG] default - 使用postcss处理样式，使用了1个插件!
+[2019-11-10T19:17:12.063] [INFO] default - 处理字体: {}
+[2019-11-10T19:17:12.064] [INFO] default - 使用postcss处理完毕! 用时: 4 毫秒
+[2019-11-10T19:17:12.064] [INFO] default - 正在处理script!
+[2019-11-10T19:17:12.065] [DEBUG] default - 选择将js合并到html中!
+[2019-11-10T19:17:12.089] [INFO] default - 工程中只有一个页面!
+[2019-11-10T19:17:12.090] [INFO] default - js中的资源处理完毕!
+[2019-11-10T19:17:12.090] [DEBUG] default - 处理引用脚本: [{"name":"main","src":"./src/main.js"}]
+[2019-11-10T19:17:12.090] [DEBUG] default - 外部脚本数量: 1
+[2019-11-10T19:17:12.090] [DEBUG] default - 处理脚本: main
+[2019-11-10T19:17:12.090] [INFO] default - 读取文件: C:\Users\my\Documents\GitHub\remote\src\main.js
+[2019-11-10T19:17:12.090] [DEBUG] default - 输出scriptData
+[2019-11-10T19:17:12.091] [DEBUG] default - 准备输出html!
+[2019-11-10T19:17:12.092] [DEBUG] default - 页面中不包含切换动画!
+[2019-11-10T19:17:12.092] [INFO] default - 编译结束!
+[2019-11-10T19:17:12.093] [INFO] default - 发送页面需要刷新命令!
+[2019-11-10T19:17:12.093] [INFO] default - 读取成功: C:\Users\my\Documents\GitHub\remote\src\main.js
+[2019-11-10T19:17:12.093] [INFO] default - 写入文件: C:\Users\my\Documents\GitHub\remote\dist\static\css\owo.main.o69m2xvl9ul.css
+[2019-11-10T19:17:12.094] [INFO] default - 主要逻辑文件写出成功!
+[2019-11-10T19:17:12.094] [INFO] default - 写入文件: C:\Users\my\Documents\GitHub\remote\dist\static\js\main.js

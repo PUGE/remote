@@ -1,0 +1,127 @@
+<template lang="pug">
+.two
+  //- plug(_name="title" _src="./src/moudle/titleBar.owo")
+  .title 穿透类型
+  select.clint-type
+    option(value ="tcp") tcp
+    option(value ="udp") udp
+    option(value ="http") http
+    option(value ="https") https
+  .title 本地端口
+  input.local(type="number", value="3389")
+  .title 远程端口
+  input.remote(type="number", value="6010")
+  .button.run(:tap="switchRun") 运行
+  .infoBar 地址: lamp.run:6004
+</template>
+
+<script>
+  module.exports = {
+    data: {
+      ipcRenderer: null,
+      isRun: false
+    },
+    created: function () {
+      this.data.ipcRenderer = require('electron').ipcRenderer
+      this.chaxun()
+    },
+    chaxun: function () {
+      const isRunInfo = this.data.ipcRenderer.sendSync('synchronous-message', {
+        type: 'query'
+      })
+      console.log(isRunInfo)
+      if (isRunInfo.err === 0) {
+        this.data.isRun = isRunInfo.value
+        if (isRunInfo.value) {
+          owo.query('.run')[0].classList.add('is-run')
+          owo.query('.run')[0].innerText = '停止运行'
+        }
+      }
+    },
+    switchRun: function () {
+      if (this.data.isRun) {
+        this.data.ipcRenderer.sendSync('synchronous-message', {
+          type: 'stop'
+        })
+        
+        owo.query('.run')[0].classList.remove('is-run')
+        owo.query('.run')[0].innerText = '开始运行'
+        owo.query('.infoBar')[0].style.display = 'none'
+      } else {
+        const remotePort = owo.query('.remote')[0].value
+        const localPort = owo.query('.local')[0].value
+        if (!remotePort || !localPort) {
+          alert('本地端口和远程端口不能为空!')
+        }
+        console.log(owo.query('.clint-type')[0].value)
+        this.data.ipcRenderer.sendSync('synchronous-message', {
+          type: 'run',
+          localPort,
+          remotePort,
+          clintType: owo.query('.clint-type')[0].value
+        })
+        owo.query('.infoBar')[0].innerText = `地址: lamp.run:${remotePort}`
+        owo.query('.infoBar')[0].style.display = 'block'
+        owo.query('.run')[0].classList.add('is-run')
+        owo.query('.run')[0].innerText = '停止运行'
+      }
+      
+      this.data.isRun = !this.data.isRun
+      
+    }
+  }
+</script>
+
+
+<style lang="less">
+.two {
+  padding: 20px 0;
+}
+.button {
+  height: 40px;
+  background-color: #009fe9;
+  color: white;
+  text-align: center;
+  line-height: 40px;
+  margin: 10px 20px;
+  box-shadow: 1px 1px 1px #9eb3f1;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 30px;
+}
+.is-run {
+  background-color: cadetblue;
+  box-shadow: 1px 1px 1px #ccc;
+}
+select, input {
+  display: block;
+  margin: 0 20px;
+  background-color: palegoldenrod;
+  width: calc(100% - 60px);
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  padding: 0 10px;
+  font-size: 18px;
+}
+select {
+  width: calc(100% - 40px);
+}
+.title {
+  margin: 0 20px;
+  line-height: 40px;
+  color: #666;
+}
+.infoBar {
+  position: fixed;
+  width: 100%;
+  height: 25px;
+  top: 0;
+  background-color: gainsboro;
+  text-align: center;
+  line-height: 25px;
+  font-size: 14px;
+  color: cornflowerblue;
+  display: none;
+}
+</style>

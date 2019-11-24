@@ -1,0 +1,49 @@
+{
+  "name": "lamp",
+  "version": "1.0.0",
+  "description": "A minimal Electron application",
+  "main": "./electron/main.js",
+  "scripts": {
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "start": "electron ."
+  },
+  "build": {
+    "extraResources": [
+      {
+        "from": "./resources/image/48.ico",
+        "to": "./image/48.ico"
+      },
+      {
+        "from": "./resources/image/48.png",
+        "to": "./image/48.png"
+      },
+      {
+        "from": "./resources/frpc.exe",
+        "to": "./frpc.exe"
+      }
+    ],
+    "win": {
+      "icon": "./resources/image/256.png"
+    }
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "PUGE",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^7.1.1",
+    "electron-builder": "^22.1.0"
+  },
+  "dependencies": {
+    "child_process": "^1.0.2",
+    "less": "^3.10.3",
+    "pug": "^2.0.4"
+  }
+}

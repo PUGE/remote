@@ -1,0 +1,19 @@
+<template lang="pug">
+.title-bar
+  .back(:click="history.back(-1)") 返回
+</template>
+
+<script>
+  module.exports = {
+    created: function () {
+    }
+  }
+</script>
+
+
+<style lang="less">
+.title-bar {
+  background-color: lightblue;
+  height: 35px;
+}
+</style>
