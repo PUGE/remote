@@ -33,7 +33,7 @@
       if (isRunInfo.err === 0) {
         this.data.isRun = isRunInfo.value
         if (isRunInfo.value) {
-          owo.query('.run')[0].classList.add('is-run')
+          this.$el.classList.add('is-run')
           owo.query('.run')[0].innerText = '停止运行'
         }
       }
@@ -43,8 +43,7 @@
         this.data.ipcRenderer.sendSync('synchronous-message', {
           type: 'stop'
         })
-        
-        owo.query('.run')[0].classList.remove('is-run')
+        this.$el.classList.remove('is-run')
         owo.query('.run')[0].innerText = '开始运行'
         owo.query('.infoBar')[0].style.display = 'none'
       } else {
@@ -63,7 +62,7 @@
         if (res.err === 0) {
           owo.query('.infoBar')[0].innerText = `地址: lamp.run:${remotePort}`
           owo.query('.infoBar')[0].style.display = 'block'
-          owo.query('.run')[0].classList.add('is-run')
+          this.$el.classList.add('is-run')
           owo.query('.run')[0].innerText = '停止运行'
         } else {
           alert(res.message)
@@ -93,7 +92,7 @@
   cursor: pointer;
   margin-top: 30px;
 }
-.is-run {
+.is-run .button {
   background-color: cadetblue;
   box-shadow: 1px 1px 1px #ccc;
 }

@@ -21,10 +21,15 @@ function createWindow () {
     skipTaskbar: true,
     icon: "./resources/image/48.png",
     maximizable: false,
+    show: false,
     webPreferences: {
       nodeIntegration: true,
       preload: path.join(__dirname, 'preload.js')
     }
+  })
+
+  mainWindow.on('ready-to-show', function () {
+    mainWindow.show() // 初始化后再显示
   })
 
   // and load the index.html of the app.
@@ -98,7 +103,11 @@ ipcMain.on('synchronous-message', (event, arg) => {
     // console.log(process.cwd())
     const frpPath = process.cwd() + '\\resources\\frpc.exe'
     if (fs.existsSync(frpPath)) {
-      child = execFile(filePath, [arg.clintType, '-s', 'lamp.run:7000', '-l', arg.localPort, '-i', '0.0.0.0', '-r', arg.remotePort], (error, stdout, stderr) => {
+      let args = [arg.clintType, '-s', 'lamp.run:7000', '-l', arg.localPort, '-i', '0.0.0.0']
+      if (arg.clintType === 'tcp' || arg.clintType === 'udp') {
+        args.push('-r', arg.remotePort)
+      }
+      child = execFile(frpPath, args, (error, stdout, stderr) => {
         if (error) {
           console.log(error)
           event.returnValue = {err: 1, message: error}
