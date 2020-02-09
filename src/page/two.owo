@@ -1,5 +1,5 @@
 <template lang="pug">
-.two
+.two(o-if="this.data.config")
   //- plug(_name="title" _src="./src/moudle/titleBar.owo")
   .title 穿透类型
   select.clint-type
@@ -8,10 +8,10 @@
     option(value ="http") http
     option(value ="https") https
   .title 本地端口
-  input.local(type="number", value="3389")
+  input.local(type="number", o-value="this.data.config.localPort")
   .title 远程端口
-  input.remote(type="number", value="6010")
-  .button.run(:tap="switchRun") 运行
+  input.remote(type="number", o-value="this.data.config.remote")
+  .button.run(o-tap="switchRun") 运行
   .infoBar 地址: lamp.run:6004
 </template>
 
@@ -19,7 +19,8 @@
   module.exports = {
     data: {
       ipcRenderer: null,
-      isRun: false
+      isRun: false,
+      config: null
     },
     created: function () {
       this.data.ipcRenderer = require('electron').ipcRenderer
@@ -29,7 +30,8 @@
       const isRunInfo = this.data.ipcRenderer.sendSync('synchronous-message', {
         type: 'query'
       })
-      console.log(isRunInfo)
+      this.data.config = isRunInfo.config
+      
       if (isRunInfo.err === 0) {
         this.data.isRun = isRunInfo.value
         if (isRunInfo.value) {
@@ -37,6 +39,11 @@
           owo.query('.run')[0].innerText = '停止运行'
         }
       }
+      this.handleEvent()
+      setTimeout(() => {
+        // 判断是否自动运行
+        if (this.data.config.autoStart) this.switchRun()
+      }, 0);
     },
     switchRun: function () {
       if (this.data.isRun) {

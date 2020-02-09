@@ -9,6 +9,13 @@ const { spawn, execFile } = require('child_process')
 let mainWindow, tray
 // 系统托盘
 
+// 读取配置文件
+const config = require("./config.json")
+if (!config) {
+  alert('找不到配置文件!')
+  return
+}
+
 
 function createWindow () {
   // Create the browser window.
@@ -33,11 +40,11 @@ function createWindow () {
   })
 
   // and load the index.html of the app.
-  // mainWindow.loadURL('http://127.0.0.1:8000/')
-  mainWindow.loadURL('https://puge-10017157.cos.ap-shanghai.myqcloud.com/lamp/index.html')
+  mainWindow.loadURL('http://127.0.0.1:8000/')
+  // mainWindow.loadURL(config.home)
 
   // Open the DevTools.
-  // mainWindow.webContents.openDevTools()
+  mainWindow.webContents.openDevTools()
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {
@@ -54,6 +61,12 @@ function createWindow () {
       label: '退出',
       click: function(){
         app.quit();
+      }
+    },
+    {
+      label: '打开开机自启',
+      click: function() {
+        console.log(config)
       }
     }
   ]);
@@ -93,7 +106,7 @@ app.on('activate', function () {
 
 let child = null
 ipcMain.on('synchronous-message', (event, arg) => {
-  // console.log(arg) // prints "ping"
+  console.log(arg) // prints "ping"
   
   if (arg.type === 'run') {
     if (child !== null) {
@@ -103,7 +116,7 @@ ipcMain.on('synchronous-message', (event, arg) => {
     // console.log(process.cwd())
     const frpPath = process.cwd() + '\\resources\\frpc.exe'
     if (fs.existsSync(frpPath)) {
-      let args = [arg.clintType, '-s', 'lamp.run:7000', '-l', arg.localPort, '-i', '0.0.0.0']
+      let args = [arg.clintType, '-s', config.server, '-l', arg.localPort, '-i', '0.0.0.0']
       if (arg.clintType === 'tcp' || arg.clintType === 'udp') {
         args.push('-r', arg.remotePort)
       }
@@ -125,6 +138,6 @@ ipcMain.on('synchronous-message', (event, arg) => {
     }
     event.returnValue = {err: 0}
   } else if (arg.type === 'query') {
-    event.returnValue = {err: 0, value: child !== null}
+    event.returnValue = {err: 0, value: child !== null, config}
   }
 })

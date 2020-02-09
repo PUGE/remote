@@ -1,0 +1,76 @@
+{
+	"root": "/src",
+	"title": "lamp",
+	"scheme": [],
+	"basePath": "./",
+	"outFolder": "./dist",
+	"container": "",
+	"resourceFolder": "./src/resource",
+	"headList": [
+		{
+			"http-equiv": "content-type",
+			"content": "text/html; charset=UTF-8"
+		},
+		{
+			"name": "viewport",
+			"content": "initial-scale=1,user-scalable=no,maximum-scale=1"
+		}
+	],
+	"scriptList": [
+		{
+			"name": "main",
+			"src": "./src/main.js"
+		}
+	],
+	"styleList": [
+		{
+			"name": "main",
+			"src": "./src/main.css"
+		}
+	],
+	"pageList": [
+		{
+			"name": "two",
+			"src": "./src/page/two.owo"
+		}
+	],
+	"mode": {
+		"dev": {
+			"debug": true,
+			"watcher": {
+				"enable": true,
+				"ignored": "./dist/*",
+				"depth": 99
+			},
+			"route": {
+				"startAtHome": false
+			},
+			"outPut": {
+				"merge": true,
+				"minifyCss": false,
+				"minifyJs": false,
+				"addVersion": true
+			},
+			"serverPort": 8000,
+			"server": true,
+			"autoReload": true,
+			"remoteDebug": true,
+			"watcherEnable": true
+		},
+		"build": {
+			"debug": false,
+			"alertLink": false,
+			"route": {
+				"startAtHome": true
+			},
+			"outPut": {
+				"merge": false,
+				"alertLink": true,
+				"minifyCss": true,
+				"minifyJs": true,
+				"addVersion": true,
+				"embedSize": 10
+			}
+		}
+	}
+}
