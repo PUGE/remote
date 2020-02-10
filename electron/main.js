@@ -10,12 +10,12 @@ let mainWindow, tray
 // 系统托盘
 
 // 读取配置文件
-const config = require("./config.json")
+let config = fs.readFileSync('./resources/config.json')
 if (!config) {
   alert('找不到配置文件!')
   return
 }
-
+config = JSON.parse(config)
 
 function createWindow () {
   // Create the browser window.
@@ -40,11 +40,11 @@ function createWindow () {
   })
 
   // and load the index.html of the app.
-  mainWindow.loadURL('http://127.0.0.1:8000/')
-  // mainWindow.loadURL(config.home)
+  // mainWindow.loadURL('http://127.0.0.1:8000/')
+  mainWindow.loadURL(config.home)
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools()
+  // mainWindow.webContents.openDevTools()
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {
