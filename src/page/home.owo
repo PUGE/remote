@@ -10,8 +10,8 @@
 <script>
   module.exports = {
     data: {
-      userName: "",
-      passWord: "",
+      userName: "puge",
+      passWord: "mmit7750",
       userInfo: {
         type: "tcp",
         localPort: 3389,

@@ -1,5 +1,5 @@
 <template lang="pug">
-.two(o-if="this.data.config")
+.two
   //- plug(_name="title" _src="./src/moudle/titleBar.owo")
   .title 穿透类型
   select.clint-type
@@ -8,11 +8,11 @@
     option(value ="http") http
     option(value ="https") https
   .title 本地端口
-  input.local(type="number", o-value="this.data.config.localPort")
+  input.local(type="number", o-value="this.data.config.localPort" o-input="saveConfig")
   .title 远程端口
   input.remote(type="number", o-value="this.data.config.remote")
   .button.run(o-tap="switchRun") 运行
-  .button.auto-button#autoButton(o-tap="switchRun") 打开自动运行
+  .button.auto-button#autoButton(o-tap="switchAutoRun") 打开自动运行
   .infoBar 地址: lamp.run:6004
 </template>
 
@@ -29,9 +29,12 @@
         this.data.config = owo.script.home.data.userInfo
         this.chaxun()
       } else {
-        owo.go({
-          page: 'home'
-        })
+        setTimeout(() => {
+          owo.go({
+            page: 'home'
+          })
+        }, 0);
+        
       }
       
     },
@@ -64,6 +67,7 @@
         this.$el.classList.remove('is-run')
         owo.query('.run')[0].innerText = '开始运行'
         owo.query('.infoBar')[0].style.display = 'none'
+        this.saveConfig()
       } else {
         const remotePort = owo.query('.remote')[0].value
         const localPort = owo.query('.local')[0].value
@@ -91,6 +95,23 @@
       this.data.isRun = !this.data.isRun
       
     },
+    postData: function (url, data) {
+      // Default options are marked with *
+      return fetch(url, {
+        body: JSON.stringify(data), // must match 'Content-Type' header
+        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: 'same-origin', // include, same-origin, *omit
+        headers: {
+          'user-agent': 'Mozilla/4.0 MDN Example',
+          'content-type': 'application/json'
+        },
+        method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        mode: 'cors', // no-cors, cors, *same-origin
+        redirect: 'follow', // manual, *follow, error
+        referrer: 'no-referrer', // *client, no-referrer
+      })
+      .then(response => response.json()) // parses response to JSON
+    },
     switchAutoRun: function () {
       this.data.config.autoStart = !this.data.config.autoStart
       if (this.data.config.autoStart) {
@@ -98,6 +119,10 @@
       } else {
         this.$dom.autoButton.innerText = '打开自动运行'
       }
+      this.saveConfig()
+    },
+    saveConfig: function () {
+      this.postData(`http://127.0.0.1:8005/updata?username=${owo.script.home.data.userName}&password=${owo.script.home.data.passWord}&type=lamp`, {data: this.data.config})
     }
   }
 </script>
