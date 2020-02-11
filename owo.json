@@ -30,6 +30,10 @@
 	],
 	"pageList": [
 		{
+			"name": "home",
+			"src": "./src/page/home.owo"
+		},
+		{
 			"name": "two",
 			"src": "./src/page/two.owo"
 		}

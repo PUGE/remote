@@ -12,6 +12,7 @@
   .title 远程端口
   input.remote(type="number", o-value="this.data.config.remote")
   .button.run(o-tap="switchRun") 运行
+  .button.auto-button#autoButton(o-tap="switchRun") 打开自动运行
   .infoBar 地址: lamp.run:6004
 </template>
 
@@ -23,15 +24,21 @@
       config: null
     },
     created: function () {
-      this.data.ipcRenderer = require('electron').ipcRenderer
-      this.chaxun()
+      if (owo.script.home.data.userName !== "") {
+        this.data.ipcRenderer = require('electron').ipcRenderer
+        this.data.config = owo.script.home.data.userInfo
+        this.chaxun()
+      } else {
+        owo.go({
+          page: 'home'
+        })
+      }
+      
     },
     chaxun: function () {
       const isRunInfo = this.data.ipcRenderer.sendSync('synchronous-message', {
         type: 'query'
       })
-      this.data.config = isRunInfo.config
-      
       if (isRunInfo.err === 0) {
         this.data.isRun = isRunInfo.value
         if (isRunInfo.value) {
@@ -40,10 +47,14 @@
         }
       }
       this.handleEvent()
-      setTimeout(() => {
-        // 判断是否自动运行
-        if (this.data.config.autoStart) this.switchRun()
-      }, 0);
+      if (this.data.config.autoStart) {
+        setTimeout(() => {
+          // 判断是否自动运行
+          this.$dom.autoButton.innerText = '关闭自动运行'
+          this.switchRun()
+        }, 0);
+      }
+      
     },
     switchRun: function () {
       if (this.data.isRun) {
@@ -62,6 +73,7 @@
         console.log(owo.query('.clint-type')[0].value)
         const res = this.data.ipcRenderer.sendSync('synchronous-message', {
           type: 'run',
+          name: owo.script.home.data.userName,
           localPort,
           remotePort,
           clintType: owo.query('.clint-type')[0].value
@@ -78,6 +90,14 @@
       
       this.data.isRun = !this.data.isRun
       
+    },
+    switchAutoRun: function () {
+      this.data.config.autoStart = !this.data.config.autoStart
+      if (this.data.config.autoStart) {
+        this.$dom.autoButton.innerText = '关闭自动运行'
+      } else {
+        this.$dom.autoButton.innerText = '打开自动运行'
+      }
     }
   }
 </script>
@@ -85,7 +105,7 @@
 
 <style lang="less">
 .two {
-  padding: 20px 0;
+  padding-top: 20px;
 }
 .button {
   height: 40px;
@@ -97,7 +117,7 @@
   box-shadow: 1px 1px 1px #9eb3f1;
   border-radius: 5px;
   cursor: pointer;
-  margin-top: 30px;
+  margin-top: 16px;
 }
 .is-run .button {
   background-color: cadetblue;
@@ -133,5 +153,9 @@ select {
   font-size: 14px;
   color: cornflowerblue;
   display: none;
+}
+.auto-button {
+  background-color: coral;
+  box-shadow: 1px 1px 1px #a7af8e;
 }
 </style>

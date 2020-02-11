@@ -11,17 +11,18 @@ let mainWindow, tray
 
 // 读取配置文件
 let config = fs.readFileSync('./resources/config.json')
+
 if (!config) {
   alert('找不到配置文件!')
   return
 }
 config = JSON.parse(config)
-
+console.log(`配置:`, config)
 function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({
     width: 320,
-    height: 400,
+    height: 420,
     title: "lamp",
     autoHideMenuBar: true,
     resizable: false,
@@ -40,11 +41,11 @@ function createWindow () {
   })
 
   // and load the index.html of the app.
-  // mainWindow.loadURL('http://127.0.0.1:8000/')
-  mainWindow.loadURL(config.home)
+  mainWindow.loadURL('http://127.0.0.1:8000/')
+  // mainWindow.loadURL(config.home)
 
   // Open the DevTools.
-  // mainWindow.webContents.openDevTools()
+  mainWindow.webContents.openDevTools()
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {
@@ -116,7 +117,7 @@ ipcMain.on('synchronous-message', (event, arg) => {
     // console.log(process.cwd())
     const frpPath = process.cwd() + '\\resources\\frpc.exe'
     if (fs.existsSync(frpPath)) {
-      let args = [arg.clintType, '-s', config.server, '-l', arg.localPort, '-i', '0.0.0.0']
+      let args = [arg.clintType, '-s', config.server, '-l', arg.localPort, '-i', '0.0.0.0', '-n', arg.name]
       if (arg.clintType === 'tcp' || arg.clintType === 'udp') {
         args.push('-r', arg.remotePort)
       }

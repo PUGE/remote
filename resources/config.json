@@ -1,4 +1,5 @@
 {
+  "user": "test",
   "home": "https://puge-10017157.cos.ap-shanghai.myqcloud.com/lamp/index.html",
   "type": "tcp",
   "server": "lamp.run:7000",
