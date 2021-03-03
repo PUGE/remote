@@ -48,6 +48,6 @@
   "dependencies": {
     "child_process": "^1.0.2",
     "less": "^3.10.3",
-    "pug": "^2.0.4"
+    "pug": "^3.0.1"
   }
 }
