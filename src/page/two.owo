@@ -8,12 +8,13 @@
     option(value ="http") http
     option(value ="https") https
   .title 本地端口
-  input.local(type="number", o-value="this.data.config.localPort" o-input="saveConfig")
-  .title 远程端口
-  input.remote(type="number", o-value="this.data.config.remote")
-  .button.run(o-tap="switchRun") 运行
-  .button.auto-button#autoButton(o-tap="switchAutoRun") 打开自动运行
-  .infoBar 地址: lamp.run:6004
+  .box(o-if="this.data.config")
+    input.local(type="number", o-value="this.data.config.localPort" o-input="saveConfig")
+    .title 远程端口
+    input.remote(type="number", o-value="this.data.config.remote")
+    .button.run(o-tap="switchRun") 运行
+    .button.auto-button#autoButton(o-tap="switchAutoRun") 打开自动运行
+    .infoBar 地址: lamp.run:6004
 </template>
 
 <script>
@@ -24,6 +25,7 @@
       config: null
     },
     created: function () {
+      console.log('页面')
       if (owo.script.home.data.userName !== "") {
         this.data.ipcRenderer = require('electron').ipcRenderer
         this.data.config = owo.script.home.data.userInfo
@@ -122,7 +124,7 @@
       this.saveConfig()
     },
     saveConfig: function () {
-      this.postData(`http://127.0.0.1:8005/updata?username=${owo.script.home.data.userName}&password=${owo.script.home.data.passWord}&type=lamp`, {data: this.data.config})
+      this.postData(`http://154.8.196.163:8006/updata?username=${owo.script.home.data.userName}&password=${owo.script.home.data.passWord}&type=lamp`, {data: this.data.config})
     }
   }
 </script>

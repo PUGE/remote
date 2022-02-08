@@ -1,6 +1,7 @@
 {
-  "user": "test",
-  "home": "https://cunchu.site/lamp/index.html",
+  "userName": "puge",
+  "password": "1234",
+  "home": "https://cunchu.site/web/lamp/index.html",
   "type": "tcp",
   "server": "lamp.run:7000",
   "localPort": 3389,

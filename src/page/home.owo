@@ -19,14 +19,28 @@
         autoStart: false,
       }
     },
+    created: function () {
+      const configInfo = ipcRenderer.sendSync('synchronous-message', {
+        type: 'query'
+      }).config
+      if (configInfo.autoStart) {
+        this.data.userName = configInfo.userName
+        this.data.passWord = configInfo.password
+        this.handleEvent()
+        setTimeout(() => {
+          this.login()
+        }, 100)
+      }
+    },
     login: function () {
-      fetch(`http://127.0.0.1:8005/login?username=${this.data.userName}&password=${this.data.passWord}&type=lamp`).then((response) => {return response.json();}).then((res) => {
+      fetch(`http://154.8.196.163:8006/login?username=${this.data.userName}&password=${this.data.passWord}&type=lamp`).then((response) => {return response.json();}).then((res) => {
         if (res.err === 0) {
           console.log(res.data.data)
           owo.tool.toast('登陆成功')
           if (res.data.data !== '') this.data.userInfo = JSON.parse(res.data.data)
           owo.go({
-            page: 'two'
+            page: 'two',
+            ani: "moveToLeft/moveFromRight/moveToRight/moveFromLeft"
           })
         }
       })

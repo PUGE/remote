@@ -41,11 +41,12 @@ function createWindow () {
   })
 
   // and load the index.html of the app.
-  mainWindow.loadURL('http://127.0.0.1:8000/')
-  // mainWindow.loadURL(config.home)
+  // mainWindow.loadURL('http://127.0.0.1:8000/')
+  console.log(config.home)
+  mainWindow.loadURL(config.home)
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools()
+  // mainWindow.webContents.openDevTools()
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {
